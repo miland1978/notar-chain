@@ -7,7 +7,15 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "build:android": "detox build --configuration android.emu.debug",
+    "build:android:release": "detox build --configuration android.emu.release",
+    "test:android": "detox test --configuration android.emu.debug --cleanup",
+    "test:android:release": "detox test --configuration android.emu.release --cleanup",
+    "build:ios": "detox build --configuration ios.sim.debug",
+    "build:ios:release": "detox build --configuration ios.sim.release",
+    "test:ios": "detox test --configuration ios.sim.debug --cleanup",
+    "test:ios:release": "detox test --configuration ios.sim.release --cleanup"
   },
   "dependencies": {
     "react": "17.0.1",
@@ -21,8 +29,10 @@
     "@types/react-native": "^0.63.51",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.6.3",
+    "detox": "^18.7.1",
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
     "typescript": "^3.8.3"
@@ -32,6 +42,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "testPathIgnorePatterns": [
+      "./e2e/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
