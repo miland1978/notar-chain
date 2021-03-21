@@ -1,0 +1,7 @@
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add <Name> -o Data/Migrations -p API.BizLogic -s API.Host
+
+dotnet ef migrations remove -p API.BizLogic -s API.Host
+
+dotnet ef database update -p API.BizLogic -s API.Host
