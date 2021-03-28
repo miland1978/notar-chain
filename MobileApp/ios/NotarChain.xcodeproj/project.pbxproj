@@ -145,7 +145,6 @@
 				5F9BE5710DD12810897B194D /* Pods-NotarChain-NotarChainTests.debug.xcconfig */,
 				8A94D02DAEFC06FFD99478F4 /* Pods-NotarChain-NotarChainTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
